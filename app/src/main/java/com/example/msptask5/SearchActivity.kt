@@ -22,9 +22,8 @@ class SearchActivity : AppCompatActivity() {
         GoButton.setOnClickListener{
             goButtonBody(NameOfCountry)
         }
+
     }
-
-
     private fun goButtonBody(NameOfCountry: String) {
         if (CountryName.text != null) {
             val intent = Intent(this, RecyclerViewActivity::class.java)

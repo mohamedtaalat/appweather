@@ -5,6 +5,7 @@ import com.example.msptask5.ApiPackage.ApiKey
 import com.example.msptask5.ApiPackage.BuildApi
 import com.example.msptask5.ApiPackage.Current
 import com.example.msptask5.ApiPackage.WeatherInterface
+import retrofit2.Call
 
 class Repo(private val dao:Dao) {
     fun GetAll():List<Current>{
@@ -23,8 +24,8 @@ class Repo(private val dao:Dao) {
         dao.Delete(countryName)
     }
     val Api=BuildApi.api
-    fun getWeatherFromApi(apiKey: ApiKey,countryName: String):List<Current>{
-        return Api.GetApi(apiKey.toString(),countryName)
+    fun getWeatherFromApi(apiKey: String,countryName: String):List<Current>{
+        return Api.create(WeatherInterface::class.java).GetApiWeather(apiKey.toString(),countryName) as List<Current>
     }
 
     fun addWeather( Weather : List<Current>){

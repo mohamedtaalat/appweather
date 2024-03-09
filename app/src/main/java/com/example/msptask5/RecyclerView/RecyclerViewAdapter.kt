@@ -1,5 +1,6 @@
 package com.example.msptask5.RecyclerView
 
+import retrofit2.Call
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.msptask5.ApiPackage.Current
 import com.example.msptask5.R
 
- class RecyclerViewAdapter(var weather:List<Current>):RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
+
+ class RecyclerViewAdapter(var weather  : List<Current>):RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
     
     inner class ViewHolder(itemview:View):RecyclerView.ViewHolder(itemview){
          var Raining:TextView=itemview.findViewById(R.id.RainingTv)
